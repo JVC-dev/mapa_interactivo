@@ -88,13 +88,13 @@ ul{
 }
 .departamento-interactivo:hover {
     fill: #9aadff !important;
-    stroke: #ffffff !important;
+    stroke: #ffffff00 !important;
     stroke-width: 2px !important;
 }
 .mapa-tooltip h3 {
     margin: 0 0 10px 0;
     color: #9aadff;
-    border-bottom: 1px solid #9aadff;
+    border-bottom: 1px solid #ff0101;
     padding-bottom: 5px;
     font-size: 16px;
 }
@@ -116,4 +116,8 @@ ul{
 #label_points circle {
     fill: transparent;
     stroke: transparent;
+}
+.departamento-interactivo:focus {
+    outline: none !important;
+    border: none !important;
 }
