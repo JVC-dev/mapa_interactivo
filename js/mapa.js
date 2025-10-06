@@ -1,5 +1,5 @@
 
-        // Información de cada departamento de El Salvador
+// Información de cada departamento de El Salvador
 const infoDepartamentos = {
     'SVAH': {
         nombre: 'Ahuachapán',
@@ -7,7 +7,8 @@ const infoDepartamentos = {
         poblacion: '333,406 habitantes',
         extension: '1,239.6 km²',
         descripcion: 'Conocido por sus cultivos de café y sus aguas termales.',
-        zona: 'Occidental'
+        zona: 'Occidental',
+        archivo: 'Ahuchapán.html'
     },
     'SVSA': {
         nombre: 'Santa Ana',
@@ -15,7 +16,8 @@ const infoDepartamentos = {
         poblacion: '572,081 habitantes',
         extension: '2,023.2 km²',
         descripcion: 'Segunda ciudad más importante del país, famosa por su catedral y volcanes.',
-        zona: 'Occidental'
+        zona: 'Occidental',
+        archivo: 'SantaAna.html'
     },
     'SVSO': {
         nombre: 'Sonsonate',
@@ -23,7 +25,8 @@ const infoDepartamentos = {
         poblacion: '462,399 habitantes',
         extension: '1,225.8 km²',
         descripcion: 'Conocido por sus playas y producción agrícola.',
-        zona: 'Occidental'
+        zona: 'Occidental',
+        archivo: 'Sonsonate.html'
     },
     'SVLI': {
         nombre: 'La Libertad',
@@ -31,7 +34,8 @@ const infoDepartamentos = {
         poblacion: '660,652 habitantes',
         extension: '1,652.9 km²',
         descripcion: 'Famoso por sus playas y desarrollo turístico.',
-        zona: 'Central'
+        zona: 'Central',
+        archivo: 'LaLibertad.html'
     },
     'SVCH': {
         nombre: 'Chalatenango',
@@ -39,7 +43,8 @@ const infoDepartamentos = {
         poblacion: '192,788 habitantes',
         extension: '2,016.6 km²',
         descripcion: 'Departamento montañoso con clima fresco y paisajes naturales.',
-        zona: 'Central'
+        zona: 'Central',
+        archivo: 'Chalatenango.html'
     },
     'SVCU': {
         nombre: 'Cuscatlán',
@@ -47,7 +52,8 @@ const infoDepartamentos = {
         poblacion: '252,528 habitantes',
         extension: '756.2 km²',
         descripcion: 'Departamento pequeño pero importante históricamente.',
-        zona: 'Central'
+        zona: 'Central',
+        archivo: 'Cuscatlán.html'
     },
     'SVSS': {
         nombre: 'San Salvador',
@@ -55,7 +61,8 @@ const infoDepartamentos = {
         poblacion: '1,740,847 habitantes',
         extension: '886.2 km²',
         descripcion: 'Capital del país y centro económico y político.',
-        zona: 'Central'
+        zona: 'Central',
+        archivo: 'sansalvador.html'
     },
     'SVPA': {
         nombre: 'La Paz',
@@ -63,7 +70,8 @@ const infoDepartamentos = {
         poblacion: '328,221 habitantes',
         extension: '1,223.6 km²',
         descripcion: 'Importante zona agrícola y ganadera.',
-        zona: 'Central'
+        zona: 'Central',
+        archivo: 'LaPaz.html'
     },
     'SVCA': {
         nombre: 'Cabañas',
@@ -71,7 +79,8 @@ const infoDepartamentos = {
         poblacion: '149,326 habitantes',
         extension: '1,103.5 km²',
         descripcion: 'Rico en historia y sitios arqueológicos.',
-        zona: 'Central'
+        zona: 'Central',
+        archivo: 'Cabañas.html'
     },
     'SVSV': {
         nombre: 'San Vicente',
@@ -79,7 +88,8 @@ const infoDepartamentos = {
         poblacion: '174,561 habitantes',
         extension: '1,184.0 km²',
         descripcion: 'Destaca por el volcán Chinchontepec.',
-        zona: 'Central'
+        zona: 'Central',
+        archivo: 'San vicente.html'
     },
     'SVUS': {
         nombre: 'Usulután',
@@ -87,7 +97,8 @@ const infoDepartamentos = {
         poblacion: '366,040 habitantes',
         extension: '2,130.4 km²',
         descripcion: 'Conocido como "La Perla de Oriente".',
-        zona: 'Oriental'
+        zona: 'Oriental',
+        archivo: 'Usulutan.html'
     },
     'SVSM': {
         nombre: 'San Miguel',
@@ -95,7 +106,8 @@ const infoDepartamentos = {
         poblacion: '478,792 habitantes',
         extension: '2,077.1 km²',
         descripcion: 'Famosa por su carnaval y el volcán Chaparrastique.',
-        zona: 'Oriental'
+        zona: 'Oriental',
+        archivo: 'SanMiguel.html'
     },
     'SVMO': {
         nombre: 'Morazán',
@@ -103,7 +115,8 @@ const infoDepartamentos = {
         poblacion: '174,406 habitantes',
         extension: '1,447.4 km²',
         descripcion: 'Conocido por su historia durante el conflicto armado.',
-        zona: 'Oriental'
+        zona: 'Oriental',
+        archivo: 'Morazán.html'
     },
     'SVUN': {
         nombre: 'La Unión',
@@ -111,7 +124,8 @@ const infoDepartamentos = {
         poblacion: '238,217 habitantes',
         extension: '2,074.3 km²',
         descripcion: 'Principal puerto marítimo del país.',
-        zona: 'Oriental'
+        zona: 'Oriental',
+        archivo: 'La Union.html'
     }
 };
 
@@ -161,6 +175,7 @@ function inicializarMapa() {
                     <p style="margin: 5px 0;"><strong>Población:</strong> ${info.poblacion}</p>
                     <p style="margin: 5px 0;"><strong>Extensión:</strong> ${info.extension}</p>
                     <p style="margin: 5px 0;"><strong>Descripción:</strong> ${info.descripcion}</p>
+                    <p style="margin: 5px 0; font-size: 12px; color: #9aadff;"><i>Haz clic para más información</i></p>
                 `;
                 
                 tooltip.innerHTML = contenido;
@@ -195,12 +210,9 @@ function inicializarMapa() {
         depto.addEventListener('click', function() {
             const deptoId = this.id;
             const info = infoDepartamentos[deptoId];
-            if (info) {
-                const nombreArchivo = info.nombre.replace(/\s+/g, '') + '.html';
-                const zona = info.zona.toLowerCase();
-                
+            if (info && info.archivo) {
                 // Redireccionar a la página correspondiente
-                window.location.href = `pages/${nombreArchivo}`;
+                window.location.href = `pages/${info.archivo}`;
             }
         });
         
