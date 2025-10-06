@@ -82,5 +82,38 @@ ul{
     margin-top: 0;
  }
     }
+   .departamento-interactivo {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.departamento-interactivo:hover {
+    fill: #9aadff !important;
+    stroke: #ffffff !important;
+    stroke-width: 2px !important;
+}
+.mapa-tooltip h3 {
+    margin: 0 0 10px 0;
+    color: #9aadff;
+    border-bottom: 1px solid #9aadff;
+    padding-bottom: 5px;
+    font-size: 16px;
+}
+.mapa-tooltip p {
+    margin: 5px 0;
+    font-size: 13px;
+    line-height: 1.4;
+}
 
+.mapa-tooltip strong {
+    color: #9aadff;
+}
+#points circle {
+    fill: #9aadff;
+    stroke: #ffffff;
+    stroke-width: 1px;
+}
 
+#label_points circle {
+    fill: transparent;
+    stroke: transparent;
+}
