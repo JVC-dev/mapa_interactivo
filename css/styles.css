@@ -54,3 +54,7 @@ textarea{
     flex-direction: column;
   justify-content: flex-start; /* texto arriba, no pegado al fondo */
 }
+.azul{
+    background-color: #021b52;
+    color: white;
+}
